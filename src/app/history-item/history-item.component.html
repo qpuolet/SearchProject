@@ -1,0 +1,9 @@
+<li class="list-group-item list-group-item-action">
+    <div class="content">
+        <p>{{ item.searchURL }}</p>
+        <div class="post-date">{{ item.searchDate }}</div>
+    </div>
+    <button type="button" name="delete" (click)="deleteItem(item.$key)">
+        <i class="fa fa-trash-o fa-2x" aria-hidden="true" ></i>
+    </button>
+</li>

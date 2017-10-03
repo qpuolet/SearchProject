@@ -1,0 +1,23 @@
+.post-date {
+    font-size: 11px;
+}
+
+.fa-trash-o {
+    cursor: pointer;
+}
+
+.content {
+    /*max-width: 600px;*/
+    word-break: break-all;
+}
+
+.list-group-item button {
+    background: none;
+    border: 0;
+}
+
+.list-group-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
