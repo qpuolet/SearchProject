@@ -25,6 +25,6 @@ export class SearchFormComponent {
         this.searchText = find.searchText;
         const currentDate = new Date();
         const searchDate = currentDate.toJSON().slice(0,10).replace(/-/g,'/') + ' ' + currentDate.toString().slice(16,25);
-        this.items.push({ searchURL: this.searchText, searchDate: searchDate, value: Date.now() });
+        this.items.push({ searchText: this.searchText, searchDate: searchDate, value: Date.now() });
     }
 }
