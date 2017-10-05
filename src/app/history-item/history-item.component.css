@@ -21,3 +21,12 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.list-group-item button {
+    opacity: 0;
+    transition: all .2ms;
+}
+
+.list-group-item:hover button {
+    opacity: 1;
+}
