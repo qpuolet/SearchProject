@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { AngularFireDatabase ,FirebaseListObservable } from 'angularfire2/database';
+
+import { DataService } from '../../service/data.service';
 
 
 @Component({
@@ -10,13 +11,10 @@ import { AngularFireDatabase ,FirebaseListObservable } from 'angularfire2/databa
 })
 export class HistoryItemComponent {
     @Input() item;
-    items: FirebaseListObservable<any[]>;
 
-    constructor(db: AngularFireDatabase) {
-        this.items = db.list('/SearchHistory');
-    }
+    constructor(private dataService: DataService) {}
 
     deleteItem(key: string) {
-      this.items.remove(key);
+      this.dataService.onDeleteItem(key);
     }
 }

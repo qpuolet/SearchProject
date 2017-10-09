@@ -1,19 +1,20 @@
-import { Component } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Component, OnInit } from '@angular/core';
+
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'search-field',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-    queryObservable : FirebaseListObservable<any[]>;
+export class AppComponent implements OnInit{
     sortedItems: Array<any> = [];
 
-    constructor(db: AngularFireDatabase) {
-        this.queryObservable = db.list('/SearchHistory');
-        this.queryObservable.subscribe(queriedItems =>{
+    constructor(private dataService: DataService) {};
+
+    ngOnInit() {
+        return this.dataService.getItems().subscribe(queriedItems =>{
             this.sortedItems = queriedItems.sort((a, b) => b.value- a.value);
         });
-    };
+    }
 }

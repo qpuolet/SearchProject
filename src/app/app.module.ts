@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { HistoryItemComponent } from './history-item/history-item.component';
+import { DataService } from '../service/data.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { HistoryItemComponent } from './history-item/history-item.component';
     AngularFireDatabaseModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    DataService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
